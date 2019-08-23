@@ -1,78 +1,38 @@
 <!DOCTYPE html>
-
 <html>
-	<head>
 
-		<meta charset="UTF-8">
-		<title> ROCK PAPER SCISSORS </title>
-	</head>
-	
-	<body>
-		
-			<script>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title> ROCK PAPER SCISSORS </title>
+</head>
 
-				let computerSelection =  computerPlay();
-				let playerScore = 0;
-				let computerScore = 0;
-				let tieScore = 0;
+<body>
+    <div class="container">
+        <div class="headers">
+            <h2 id="left" class="Player">Player</h2>
+            <h2 id="right" class="AI"> AI</h2>
+        </div>
+        <div id="left">
+            <button id="Rock" class="buttons">ROCK</button>
+            <button id="Paper" class="buttons">PAPER</button>
+            <button id="Scissors" class="buttons">SCISSORS</button>
+        </div>
+        <div id="right">
+            <button id="Rock" class="buttons ">ROCK</button>
+            <button id="Paper" class="buttons">PAPER</button>
+            <button id="Scissors" class="buttons">SCISSORS
+            </button>
+        </div>
+        <div class="results">
+            <p> RESULTS</p>
+        </div>
+        <div class="scores">
+            <p data-box="player" class="Player box"> 0</p>
+            <p data-box="AI" class="AI box"> 0</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
 
-				function computerPlay() {
-				const options = ["rock", "paper", "scissors"];
-
-				let randomPlay = options[Math.floor(Math.random() * options.length)];
-				return randomPlay;
-				}
-
-				function playerChoice() {
-					let playerInput = prompt('choose Rock, Paper, or Scisscors').toLowerCase();
-						if (playerInput == 'rock'){
-							return 'rock';
-						} else if(playerInput == 'paper') {
-							return 'paper';
-						}else if (playerInput == 'scissors'){
-							return 'scissors';
-						}else {
-							return prompt('CHOOSE ROCK, PAPER, OR SCISSORS!! cunt');
-						}
-				}
-				
-				function playRound(playerSelection, computerSelection) {
-					
-				let winMessage = `YOU WON! You picked ${playerSelection}. AI picked ${computerSelection}. ${playerSelection} beats ${computerSelection}!`;
-				let loseMessage = `YOU LOST! You picked ${playerSelection}. AI picked ${computerSelection}. ${computerSelection} beats ${playerSelection}!`;
-				
-					if(playerSelection == computerSelection  )
-					{
-						tieScore++;
-						return `It's a tie. You both picked ${playerSelection}`
-
-					}else if (playerSelection == 'rock' && computerSelection == 'scissors' 
-						|| playerSelection == 'paper' && computerSelection == 'rock'
-					|| playerSelection == 'scissors' && computerSelection == 'paper') {
-						playerScore++;
-					 	return winMessage;
-					 	
-					} else if (playerSelection == 'rock' && computerSelection == 'paper'
-						|| playerSelection == 'paper' && computerSelection =='scissors' 
-						|| playerSelection == 'scissors' && computerSelection == 'rock') {
-						computerScore ++;
-						return loseMessage;
-					}
-				}
-
-					
-				function game() {
-					
-					for(let gameCount = 0; gameCount < 5; gameCount++){
-						console.log(playRound(playerChoice(), computerPlay()));
-						console.log(`YOU - ${playerScore} vs - AI - ${computerScore}  TIES - ${tieScore}`);
-						console.log(`Number of games played ${gameCount +1}`);
-					}
-				}
-
-				game();
-
-		</script>
-		
-	</body>
 </html>

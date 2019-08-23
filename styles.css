@@ -1,0 +1,66 @@
+.container {
+    margin: auto;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+
+    border: 5px solid black;
+    height: 400px;
+    width: 70%;
+}
+
+.Player {
+    position: absolute;
+    left: 350px;
+    /*right: 100px*/
+}
+
+.AI {
+    position: absolute;
+    right: 400px;
+}
+
+.buttons {
+    margin-top: 100px;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+#right {
+    float: right;
+    padding-right: 30px;
+}
+
+#left {
+    float: left;
+    padding-left: 30px;
+}
+
+.results {
+    padding-top: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+.selected {
+    transform: scale(1.5);
+    background-color: lime;
+    border-color: #FF00FF;
+    box-shadow: 0 0 1rem #FF00FF;
+}
+
+.box {
+    width: 50px;
+    height: 35px;
+    border: 1px solid green;
+    font-size: 30px;
+    text-align: center;
+    /*padding-top: 5px; */
+}
+
+.scores {
+    height: 50px;
+    /*display: inline;*/
+    /*text-align: center;*/
+}
